@@ -64,6 +64,9 @@ export default () => (
         eightyfourfiftyone: file(relativePath: { eq: "sponsors/8451.jpg" }) {
           ...sponsorImage
         }
+        github: file(relativePath: { eq: "sponsors/github.jpg" }) {
+          ...sponsorImage
+        }
       }
     `}
     render={data => (
@@ -97,6 +100,12 @@ export default () => (
             link="https://getronics.com"
             name="Getronics"
             size={sizes.large}
+          />
+            <Sponsor
+            image={data.github.childImageSharp.fluid}
+            link="https://github.com"
+            name="Github"
+            size={sizes.medium}
           />
         </FlexContainer>
         <FlexContainer margin="50px">
